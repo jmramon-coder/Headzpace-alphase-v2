@@ -1,0 +1,61 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@400;500;600&family=Lora:wght@400;500;600&family=Orbitron:wght@400;500;600&family=Quicksand:wght@400;500;600&family=Varela+Round&family=Bangers&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base styles */
+:root {
+  --font-heading: 'Inter';
+  --font-body: 'Inter';
+  --typography-scale: 1;
+  --size-scale: 1;
+  color-scheme: light dark;
+}
+
+/* Light mode */
+:root {
+  --bg-gradient-from: #ffffff;
+  --bg-gradient-to: #f1f5f9;
+}
+
+/* Dark mode */
+:root.dark {
+  --bg-gradient-from: #000000;
+  --bg-gradient-to: #0f172a;
+}
+
+body {
+  @apply bg-gradient-to-b;
+  background-color: var(--bg-gradient-from);
+  background-image: linear-gradient(to bottom, var(--bg-gradient-from), var(--bg-gradient-to));
+  min-height: 100vh;
+  font-family: var(--font-body);
+}
+
+/* Theme transition */
+* {
+  @apply transition-colors duration-200;
+}
+
+@layer base {
+  html {
+    font-size: calc(16px * var(--size-scale));
+  }
+}
+
+/* Bangers Font Adjustments */
+.font-heading[style*="Bangers"],
+.font-body[style*="Bangers"] {
+  letter-spacing: 2px;
+  word-spacing: 4px;
+}
+
+/* Orbitron Font Adjustments */
+.font-heading[style*="Orbitron"],
+.font-body[style*="Orbitron"] {
+  letter-spacing: 0.5px;
+}
+
+/* Rest of your CSS... */
