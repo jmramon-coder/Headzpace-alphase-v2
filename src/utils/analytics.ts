@@ -6,7 +6,7 @@
  */
 export const trackPageView = (path: string) => {
   if (!window.gtag) return;
-  window.gtag('config', 'G-MEASUREMENT_ID', {
+  window.gtag('config', 'G-3DHCK7TMT3', {
     page_path: path
   });
 };
